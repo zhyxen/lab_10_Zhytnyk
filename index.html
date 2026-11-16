@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №10 - Кошик інтернет-магазину</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Перегляд кошика інтернет-магазину</h1>
+        
+        <div class="control-panel">
+            <label for="cartIdInput">ID кошика:</label>
+            <input type="number" id="cartIdInput" value="1" min="1">
+            <button id="loadCartBtn">Завантажити кошик</button>
+            <label class="checkbox-label">
+                <input type="checkbox" id="testModeCheckbox"> Тестовий режим (помилка на 1-й спробі)
+            </label>
+        </div>
+
+        <div id="statusArea" class="status-message hidden"></div>
+        <div id="errorArea" class="error-message hidden"></div>
+
+        <div id="cartContainer" class="cart-container hidden">
+            <h2>Кошик № <span id="cartIdDisplay"></span></h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Назва товару</th>
+                        <th>Ціна</th>
+                        <th>Кількість</th>
+                        <th>Сума</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItemsList"></tbody>
+            </table>
+            <div class="cart-summary">
+                <p>Загальна сума: <span id="cartTotal"></span> $</p>
+                <p>Зі знижкою: <span id="cartDiscountedTotal"></span> $</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
